@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  git_search_portal:
+    build: .
+    container_name: git_search_portal
+    environment:
+      DEPLOYMENT_ENV: production
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+    volumes:
+      - ./:/git_search_portal
+      - /git_search_portal/node_modules
+    stdin_open: true
+    networks:
+      mynet:
+
+volumes:
+  git_search_data:
+
+networks:
+  mynet:
+    external:
+      name: git_search_portal

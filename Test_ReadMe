@@ -1,0 +1,8 @@
+After project set-up is done, run below commands in powershell after changing directory to project directory -
+
+npm start
+pip install -r Test\requirements.txt
+python -m pytest --html=Test\test_report.html
+
+To run test in parallel(**Not recommend due to api call limit**) -
+python -m pytest -n auto --html=Test\test_report.html
